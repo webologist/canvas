@@ -54,7 +54,7 @@ test('every route has its own title, and the public ones the tags a search engin
 
   await guest.page.goto('/')
   let landing = await record(guest.page, '/', /Doory/, { canonical: true })
-  expect(landing.description).toMatch(/free, open-source design platform/)
+  expect(landing.description).toMatch(/free design platform/)
   expect(landing.canonical).toBe(`${origin}/`)
   expect(landing.ogImage).toBe(`${origin}/og-image.png`)
   expect(landing.twitterCard).toBe('summary_large_image')

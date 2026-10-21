@@ -11,7 +11,6 @@ const FEATURES = [
   { icon: Share2, title: 'Sharing and comments', text: 'Share a view, comment or edit link, with a password if you want one.' },
   { icon: Download, title: 'Export', text: 'PNG, JPG, SVG and PDF, made in your browser. No watermark.' },
   { icon: ShieldCheck, title: 'No account needed', text: 'Designs you make without an account stay in your browser until you sign up.' },
-  { icon: title: 'Open source', text: 'The code is on GitHub. Report bugs or send fixes there.' },
 ]
 
 const STEPS = [

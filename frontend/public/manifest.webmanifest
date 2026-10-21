@@ -1,7 +1,7 @@
 {
   "name": "Doory",
   "short_name": "Doory",
-  "description": "Free, open-source design for everyone. Design anything — no sign-up to start.",
+  "description": "Free design for everyone. Design anything — no sign-up to start.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
