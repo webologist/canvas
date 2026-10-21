@@ -98,7 +98,6 @@ export function MarketingFooter() {
       <div className={styles.footerInner}>
         <div className={styles.footerBrand}>
           <Logo height={28} />
-          <p>Free, open-source design for everyone. Make it, share it, keep it.</p>
         </div>
         <nav aria-label="Footer" className={styles.footerNav}>
           <div>
