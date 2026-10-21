@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 
 from apps.gallery.sitemap import sitemap
 
@@ -26,6 +27,13 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+elif settings.SERVE_MEDIA:
+    # `static()` does nothing outside DEBUG, so serve the files explicitly.
+    urlpatterns += [
+        re_path(
+            rf"^{settings.MEDIA_URL.lstrip('/')}(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}
+        )
+    ]
 
 handler404 = "apps.core.views.not_found"
 handler500 = "apps.core.views.server_failure"

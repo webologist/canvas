@@ -1,0 +1,41 @@
+# Render blueprint: the Django API and its Postgres database. The frontend stays on Vercel, which proxies
+# /api, /media, /admin and /static to this service (see frontend/vercel.json).
+# Create it in Render: New > Blueprint > pick this repo. Change SITE_URL below if your Vercel address differs.
+services:
+  - type: web
+    name: canvas-api
+    runtime: docker
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    plan: starter
+    healthCheckPath: /api/v1/health/
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: canvas-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: SITE_URL
+        value: https://canvas-rho-bice.vercel.app
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://canvas-rho-bice.vercel.app
+      - key: DJANGO_ALLOWED_HOSTS
+        value: .onrender.com,canvas-rho-bice.vercel.app
+      - key: SERVE_MEDIA
+        value: "true"
+      - key: DOORY_SYNC_FONTS
+        value: "true"
+      - key: DOORY_SEED_TEMPLATES
+        value: "true"
+    disk:
+      name: canvas-media
+      mountPath: /app/media
+      sizeGB: 2
+
+databases:
+  - name: canvas-db
+    plan: basic-256mb
+    databaseName: doory
