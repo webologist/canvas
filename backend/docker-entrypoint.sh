@@ -80,7 +80,8 @@ seed_templates() {
         return 0
     fi
     echo "Adding the starter templates (existing ones are left alone)..."
-    python manage.py seed_templates || echo "Template seeding failed; the server starts anyway. Run 'manage.py seed_templates' again later." >&2
+    # shellcheck disable=SC2086  # DOORY_SEED_TEMPLATES_ARGS is a space-separated list of options
+    python manage.py seed_templates ${DOORY_SEED_TEMPLATES_ARGS:-} || echo "Template seeding failed; the server starts anyway. Run 'manage.py seed_templates' again later." >&2
 }
 
 import_size_presets() {

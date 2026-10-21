@@ -89,6 +89,7 @@ See [content.md](content.md) for what each option installs and how long it takes
 | `DOORY_SYNC_FONTS` | `false` | Download the font catalogue once, on the first start |
 | `DOORY_SYNC_FONTS_ARGS` | `--popular 100` | Which font families to download, e.g. `--popular 253` or `--all` |
 | `DOORY_SEED_TEMPLATES` | `false` | Add the starter templates every time the API starts. It only adds: templates that already exist are never changed |
+| `DOORY_SEED_TEMPLATES_ARGS` | empty | Options for `seed_templates` when it runs at start. `--update` also re-imports existing templates, so their thumbnails come back on hosts whose media storage is wiped on each deploy; it overwrites admin edits to the starters |
 | `DOORY_SYNC_MODELS` | `false` | Install the background-removal model every time the API starts |
 | `DOORY_SYNC_MODELS_ARGS` | | Extra arguments for `sync_models`, e.g. `--model u2net` or `--all` |
 | `DOORY_SYNC_AUDIO` | `false` | Install the music and sound-effect library every time the API starts |

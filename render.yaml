@@ -34,6 +34,8 @@ services:
         value: "true"
       - key: DOORY_SEED_TEMPLATES
         value: "true"
+      - key: DOORY_SEED_TEMPLATES_ARGS
+        value: "--update"
 
 databases:
   - name: canvas-db
