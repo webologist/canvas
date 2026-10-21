@@ -5,7 +5,6 @@ import { PageLoader } from '@/app/PageLoader'
 import { AccountMenu } from '@/features/auth/AccountMenu'
 import { useAuth } from '@/features/auth/AuthProvider'
 import bunny from '@/assets/bunny-sticker.webp'
-import { REPO_URL } from '@/lib/links'
 import { IconButton, LinkButton, Logo } from '@/ui'
 import { cx } from '@/lib/cx'
 import styles from './MarketingLayout.module.css'
@@ -130,14 +129,6 @@ export function MarketingFooter() {
           </div>
         </nav>
       </div>
-      {/* The attribution the Attribution Assurance License (LICENSE) asks every copy of Doory to display. */}
-      <p className={styles.legal}>
-        Doory by Siam, creator and maintainer of Doory ·{' '}
-        <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-          github.com/shaongitbd/doory
-        </a>{' '}
-        · Released under the Attribution Assurance License. No ads. No watermarks.
-      </p>
     </footer>
   )
 }
