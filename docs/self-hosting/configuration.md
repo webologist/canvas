@@ -66,6 +66,7 @@ add a row to the matching section (see [CONTRIBUTING.md](../../CONTRIBUTING.md#d
 | Setting | Default | What it does |
 |---------|---------|--------------|
 | `MEDIA_ROOT` | `backend/media` | Folder for uploads, fonts, element packs, audio and models. Docker uses the `media` volume |
+| `SERVE_MEDIA` | `false` | Let the API serve `/media/` itself, for hosts with no web server in front of it (a Render or Railway web service, say). The bundled nginx already serves it. Prefer [S3 storage](../integrations/object-storage.md) for anything that must survive a redeploy |
 | `USE_S3` | `false` | Store media in [S3-compatible storage](../integrations/object-storage.md) instead of `MEDIA_ROOT` |
 | `AWS_STORAGE_BUCKET_NAME` | | Bucket name |
 | `AWS_S3_ENDPOINT_URL` | | Endpoint, for providers other than the default one |

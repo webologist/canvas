@@ -102,6 +102,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
+# Let Django serve /media/ itself. Only for hosts without a web server in front (nginx normally serves it).
+SERVE_MEDIA = env.bool("SERVE_MEDIA", default=False)
 MEDIA_ROOT = Path(env("MEDIA_ROOT", default=str(BASE_DIR / "media")))
 
 STORAGES = {
