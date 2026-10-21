@@ -71,7 +71,7 @@ describe('settings: AI providers', () => {
     })
     const rows = within(await screen.findByRole('list', { name: 'Your AI servers' })).getAllByRole('listitem')
     expect(rows[0]).toHaveTextContent('My model server')
-    expect(rows[0]).toHaveTextContent('Doory-compatible')
+    expect(rows[0]).toHaveTextContent('V-Ideas-compatible')
     expect(rows[0]).toHaveTextContent('Key stored')
     expect(rows[0]).toHaveTextContent('ai.example.com · Fast')
     expect(rows[1]).toHaveTextContent('JSON → base64')
@@ -122,7 +122,7 @@ describe('settings: AI providers', () => {
     )
     expect(await screen.findByRole('region', { name: 'Models' })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Test connection' })).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: 'Load models' })).toBeNull() // only Doory-compatible servers list their models
+    expect(screen.queryByRole('button', { name: 'Load models' })).toBeNull() // only V-Ideas-compatible servers list their models
     expect(screen.getByLabelText('Key')).toHaveValue('') // the key is never shown again
     expect(screen.getByText('A key is stored. Leave this empty to keep it.')).toBeInTheDocument()
     expect(within(screen.getByRole('list', { name: 'Your AI servers' })).getByText(/Provider X/)).toBeInTheDocument()
@@ -182,7 +182,7 @@ describe('settings: AI providers', () => {
     expect(bodies[1]).toMatchObject({ secret: '' })
   })
 
-  it('loads the models of a Doory-compatible server, then saves the picked ones with their labels', async () => {
+  it('loads the models of a V-Ideas-compatible server, then saves the picked ones with their labels', async () => {
     const puts: unknown[] = []
     const loaded = provider({
       updated_at: '2026-10-02T00:00:00Z',

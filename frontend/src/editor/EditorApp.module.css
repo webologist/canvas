@@ -1,6 +1,6 @@
 .root {
   /*
-   * The editor's names for its colours and metrics, mapped onto the Doory tokens: the chrome
+   * The editor's names for its colours and metrics, mapped onto the V-Ideas tokens: the chrome
    * stylesheets (chrome/ed.module.css and friends) are written against these, so re-theming is one place.
    */
   --ed-bg: var(--color-bg-subtle);

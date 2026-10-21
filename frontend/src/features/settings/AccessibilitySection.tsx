@@ -5,7 +5,7 @@ import { SettingsCard } from './SettingsCard'
 const CONTRAST_OPTIONS: RadioOption<ContrastPreference>[] = [
   { value: 'system', label: 'Match my device', description: 'Uses high contrast when your device asks for more contrast.' },
   { value: 'standard', label: 'Standard' },
-  { value: 'more', label: 'High contrast', description: 'Darker text, borders and focus rings across Doory. Your designs are not changed.' },
+  { value: 'more', label: 'High contrast', description: 'Darker text, borders and focus rings across V-Ideas. Your designs are not changed.' },
 ]
 
 /** Kept in this browser (src/lib/contrast.ts), so it applies at once with no request, and also for signed-out pages. */

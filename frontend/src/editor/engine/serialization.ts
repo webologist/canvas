@@ -6,12 +6,12 @@
  * an object (`prepare`), derive state on the live object (`hydrate`) and strip derived data again
  * when writing (`dehydrate`).
  *
- * Document object types (lower-case Fabric class names plus Doory's own):
+ * Document object types (lower-case Fabric class names plus V-Ideas's own):
  *
  *   textbox · itext · rect · ellipse · circle · triangle · polygon · polyline · path · image · group
  *   doryline (line / arrow with optional arrow heads)
  *
- * Doory-specific props (all optional) are listed in EXTRA_PROPS below and typed in
+ * V-Ideas-specific props (all optional) are listed in EXTRA_PROPS below and typed in
  * types/document.ts.
  */
 import { classRegistry, type FabricObject, Group, Rect, type StaticCanvas } from 'fabric'
@@ -75,7 +75,7 @@ export const EXTRA_PROPS: readonly string[] = [
   /** Line / arrow heads. */
   'arrowStart',
   'arrowEnd',
-  /** Doory-level image filter list. */
+  /** V-Ideas-level image filter list. */
   'filterSpecs',
   /** Enter / exit / emphasis animation (editor/animation). */
   'animation',

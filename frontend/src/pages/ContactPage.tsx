@@ -44,7 +44,7 @@ const WAYS = [
 export default function ContactPage() {
   usePageMeta({
     title: 'Contact',
-    description: 'Get in touch with the Doory project: report a bug, suggest an idea or report a security problem privately.',
+    description: 'Get in touch with the V-Ideas project: report a bug, suggest an idea or report a security problem privately.',
     canonical: '/contact',
   })
   return (
@@ -56,7 +56,7 @@ export default function ContactPage() {
             We’d <Accent>love</Accent> to hear from you.
           </>
         }
-        lead="Doory is made in the open, so we talk in the open too: on GitHub, where everyone can follow along and chime in."
+        lead="V-Ideas is made in the open, so we talk in the open too: on GitHub, where everyone can follow along and chime in."
         bubble="hello friend!"
       />
 

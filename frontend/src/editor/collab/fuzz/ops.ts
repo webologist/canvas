@@ -103,7 +103,7 @@ export interface Step {
 
 export const COLORS = ['#e11d48', '#2563eb', '#059669', '#d97706', '#7c3aed', '#0891b2', '#1c1517', '#ffffff'] as const
 const FONTS = ['Inter, sans-serif', 'Georgia, serif', 'Courier New, monospace', 'Arial Black, sans-serif'] as const
-const WORDS = ['Summer', 'sale', 'Grüße', '你好', '🎨', 'Doory', 'new', 'été', 'ünï', 'line\nbreak', '—', '50%'] as const
+const WORDS = ['Summer', 'sale', 'Grüße', '你好', '🎨', 'V-Ideas', 'new', 'été', 'ünï', 'line\nbreak', '—', '50%'] as const
 const SHAPES = ['rect', 'ellipse', 'triangle', 'circle'] as const
 const MASKS = ['circle', 'rounded', 'triangle', 'diamond', 'hexagon', 'star', 'heart', 'blob', 'arch', 'cross'] as const
 const FILTER_TYPES = ['brightness', 'contrast', 'saturation', 'hue', 'blur', 'vignette', 'grayscale', 'sepia'] as const

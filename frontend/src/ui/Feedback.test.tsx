@@ -124,6 +124,6 @@ describe('Display primitives', () => {
     expect(screen.getByTestId('card')).toHaveAttribute('data-interactive', 'true')
     expect(screen.getByText('Ctrl').tagName).toBe('KBD')
     expect(screen.getByText('Hidden text')).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: 'Doory' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'V-Ideas' })).toBeInTheDocument()
   })
 })

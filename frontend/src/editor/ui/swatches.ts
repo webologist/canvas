@@ -17,7 +17,7 @@ export function registerPalette(palette: Palette): () => void {
 
 registerPalette({
   id: 'doory',
-  label: 'Doory',
+  label: 'V-Ideas',
   order: 0,
   colors: ['#2b1c17', '#7a64e0', '#c9bcff', '#ffa9b9', '#ffc9d3', '#ffe8a8', '#c4ecd9', '#ffffff'],
 })

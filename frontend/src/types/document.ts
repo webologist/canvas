@@ -26,7 +26,7 @@ export type PageBackground =
       scale?: number
     }
 
-/** Output of Fabric `toObject(EXTRA_PROPS)` plus Doory props. Unknown keys round-trip untouched. */
+/** Output of Fabric `toObject(EXTRA_PROPS)` plus V-Ideas props. Unknown keys round-trip untouched. */
 export interface DocObject {
   id: string
   type: string
@@ -74,7 +74,7 @@ export interface DoryDocument {
 }
 
 /* ------------------------------------------------------------------------------------------------
- * Typed views of the Doory-specific object props (see
+ * Typed views of the V-Ideas-specific object props (see
  * editor/engine/serialization.ts). They are all optional extras on top of `DocObject`.
  * ---------------------------------------------------------------------------------------------- */
 

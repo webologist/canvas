@@ -11,12 +11,12 @@ beforeEach(() => {
 describe('usePageMeta', () => {
   it('sets the title, description, canonical address, link-card tags and image for the page', () => {
     renderHook(() => usePageMeta({ title: 'Wedding invitation', description: 'A soft floral invitation.', canonical: '/templates/wedding', image: '/media/templates/wedding.webp' }))
-    expect(document.title).toBe('Wedding invitation · Doory')
+    expect(document.title).toBe('Wedding invitation · V-Ideas')
     expect(content('meta[name="description"]')).toBe('A soft floral invitation.')
     expect(content('meta[property="og:description"]')).toBe('A soft floral invitation.')
     expect(content('meta[name="twitter:description"]')).toBe('A soft floral invitation.')
-    expect(content('meta[property="og:title"]')).toBe('Wedding invitation · Doory')
-    expect(content('meta[name="twitter:title"]')).toBe('Wedding invitation · Doory')
+    expect(content('meta[property="og:title"]')).toBe('Wedding invitation · V-Ideas')
+    expect(content('meta[name="twitter:title"]')).toBe('Wedding invitation · V-Ideas')
     expect(content('link[rel="canonical"]', 'href')).toBe(`${window.location.origin}/templates/wedding`)
     expect(content('meta[property="og:url"]')).toBe(`${window.location.origin}/templates/wedding`)
     expect(content('meta[property="og:image"]')).toBe(`${window.location.origin}/media/templates/wedding.webp`)
@@ -38,7 +38,7 @@ describe('usePageMeta', () => {
   it('follows changes of its inputs without piling up tags', () => {
     const { rerender } = renderHook(({ title }) => usePageMeta({ title, canonical: '/templates/a' }), { initialProps: { title: 'First' } })
     rerender({ title: 'Second' })
-    expect(document.title).toBe('Second · Doory')
+    expect(document.title).toBe('Second · V-Ideas')
     expect(document.head.querySelectorAll('link[rel="canonical"]')).toHaveLength(1)
   })
 

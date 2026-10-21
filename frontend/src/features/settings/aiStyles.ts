@@ -17,8 +17,8 @@ export interface AiStyleInfo {
 export const AI_STYLES: readonly AiStyleInfo[] = [
   {
     id: 'doory',
-    label: 'Doory-compatible',
-    summary: 'The server implements Doory’s open contract: GET /v1/models and POST /v1/{task}.',
+    label: 'V-Ideas-compatible',
+    summary: 'The server implements V-Ideas’s open contract: GET /v1/models and POST /v1/{task}.',
     settings: 'extra_headers only. Use Load models to list the server’s models.',
     example: {},
     canLoadModels: true,
@@ -42,7 +42,7 @@ export const AI_STYLES: readonly AiStyleInfo[] = [
   {
     id: 'mask',
     label: 'Mask',
-    summary: 'Like multipart, but the server answers with a black-and-white mask that Doory applies.',
+    summary: 'Like multipart, but the server answers with a black-and-white mask that V-Ideas applies.',
     settings: 'path, file_field (default "file"), model_field, options_field, extra_fields, extra_headers.',
     example: { path: '/segment', file_field: 'file' },
     canLoadModels: false,

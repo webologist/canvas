@@ -98,16 +98,16 @@ describe('landing page', () => {
     expect(within(dialog).getByText('No matching size')).toBeInTheDocument()
   })
 
-  it('has landmarks, a skip link and links to the open-source repository', async () => {
+  it('has landmarks and a skip link, and the header has no GitHub or Contact link', async () => {
     renderApp('/')
     await screen.findByRole('heading', { level: 1 })
     expect(screen.getAllByRole('banner').length).toBeGreaterThan(0)
     expect(screen.getByRole('main')).toHaveAttribute('id', 'main')
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Skip to content' })).toHaveAttribute('href', '#main')
-    const github = within(screen.getByRole('navigation', { name: 'Main' })).getByRole('link', { name: 'GitHub' })
-    expect(github).toHaveAttribute('href', 'https://github.com/shaongitbd/doory')
-    expect(github).toHaveAttribute('rel', expect.stringContaining('noopener'))
+    const main = within(screen.getByRole('navigation', { name: 'Main' }))
+    expect(main.queryByRole('link', { name: 'GitHub' })).not.toBeInTheDocument()
+    expect(main.queryByRole('link', { name: 'Contact' })).not.toBeInTheDocument()
   })
 
   it('the mobile menu toggles and closes after navigating', async () => {
@@ -159,12 +159,12 @@ describe('features, FAQ and contact pages', () => {
     renderApp('/faq')
     const first = await screen.findByRole('button', { name: 'Do I need an account to design?' })
     expect(first).toHaveAttribute('aria-expanded', 'true')
-    const second = screen.getByRole('button', { name: 'Is Doory really free?' })
+    const second = screen.getByRole('button', { name: 'Is V-Ideas really free?' })
     expect(second).toHaveAttribute('aria-expanded', 'false')
     await userEvent.click(second)
     expect(second).toHaveAttribute('aria-expanded', 'true')
     expect(first).toHaveAttribute('aria-expanded', 'false')
-    expect(screen.getByRole('region', { name: 'Is Doory really free?' })).toBeVisible()
+    expect(screen.getByRole('region', { name: 'Is V-Ideas really free?' })).toBeVisible()
     expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute('href', '/contact')
   })
 

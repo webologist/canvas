@@ -46,7 +46,7 @@ export function rangeHint(limit: Limit, unit?: string): string {
 }
 
 /**
- * Width and height of the canvas, in px. Doory keeps the document
+ * Width and height of the canvas, in px. V-Ideas keeps the document
  * format's own bounds because print sizes (an A3 page at 300 dpi is 3508 x 4961 px) and designs created from the
  * dashboard's custom size need them, and a 4000 px cap would mark those designs invalid.
  */

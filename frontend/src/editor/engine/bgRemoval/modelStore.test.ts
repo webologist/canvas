@@ -134,7 +134,7 @@ describe('loadModel', () => {
   })
 
   it('rejects a file of the wrong length, such as an HTML page served in place of the model', async () => {
-    const html = new TextEncoder().encode('<!doctype html><title>Doory</title>')
+    const html = new TextEncoder().encode('<!doctype html><title>V-Ideas</title>')
     const short = await loadModel(model, undefined, undefined, { fetchImpl: fetchOf(streamed(html)), caches: null, digest: null }).catch((e: unknown) => e)
     expect((short as Error).message).toMatch(/incomplete/)
     const long = await loadModel(model, undefined, undefined, { fetchImpl: fetchOf(streamed(new Uint8Array(BYTES.length + 50))), caches: null, digest: null }).catch((e: unknown) => e)

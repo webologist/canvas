@@ -157,10 +157,10 @@ describe('uploads page', () => {
 
 const kit = (overrides: Partial<BrandKit> = {}): BrandKit => ({
   id: 'k1',
-  name: 'Doory brand',
+  name: 'V-Ideas brand',
   is_default: true,
   colors: [
-    { id: 'c1', name: 'Doory red', hex: '#e11d48' },
+    { id: 'c1', name: 'V-Ideas red', hex: '#e11d48' },
     { id: 'c2', name: '', hex: '#1c1517' },
   ],
   fonts: [{ role: 'heading', family: 'Playfair Display' }],
@@ -173,9 +173,9 @@ const kit = (overrides: Partial<BrandKit> = {}): BrandKit => ({
 describe('brand kits page', () => {
   it('lists kits with colours, fonts and a default badge', async () => {
     renderApp('/dashboard/brand', { user: makeUser(), handlers: [http.get('*/api/v1/brand-kits/', () => HttpResponse.json([kit(), kit({ id: 'k2', name: 'Side', is_default: false })]))] })
-    expect(await screen.findByRole('heading', { name: 'Doory brand' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'V-Ideas brand' })).toBeInTheDocument()
     expect(screen.getByText('Default')).toBeInTheDocument()
-    expect(screen.getAllByRole('img', { name: 'Doory red #e11d48' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('img', { name: 'V-Ideas red #e11d48' }).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Playfair Display/).length).toBeGreaterThan(0)
     expect(screen.getByRole('button', { name: 'Make default' })).toBeInTheDocument()
   })

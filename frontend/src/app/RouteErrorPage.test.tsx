@@ -11,7 +11,7 @@ describe('RouteErrorPage', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => undefined)
     const router = createMemoryRouter([{ path: '/', element: <Broken />, errorElement: <RouteErrorPage /> }])
     render(<RouterProvider router={router} />)
-    expect(screen.getByRole('alert')).toHaveTextContent('A part of Doory couldn’t be loaded')
+    expect(screen.getByRole('alert')).toHaveTextContent('A part of V-Ideas couldn’t be loaded')
     expect(screen.getByRole('button', { name: 'Reload page' })).toBeInTheDocument()
     spy.mockRestore()
   })

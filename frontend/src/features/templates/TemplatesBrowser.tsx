@@ -120,7 +120,7 @@ export function TemplatesBrowser() {
           filtered ? (
             <EmptyState icon={<Search size={28} />} title="No templates match" description="Try different words, or clear the filters to see everything." action={<Button variant="secondary" onClick={clearFilters}>Clear filters</Button>} />
           ) : (
-            <EmptyState icon={<LayoutTemplate size={28} />} title="Templates are on their way" description="This Doory server has no templates yet. You can still start from a blank canvas." />
+            <EmptyState icon={<LayoutTemplate size={28} />} title="Templates are on their way" description="This V-Ideas server has no templates yet. You can still start from a blank canvas." />
           )
         ) : (
           <>

@@ -12,19 +12,19 @@ const FEATURES = [
   { icon: Download, title: 'Export', text: 'PNG, JPG, SVG and PDF, made in your browser. No watermark.' },
   { icon: ShieldCheck, title: 'No account needed', text: 'Designs you make without an account stay in your browser until you sign up.' },
   { icon: GitBranch, title: 'Open source', text: 'The code is on GitHub. Report bugs or send fixes there.' },
-  { icon: Server, title: 'Self-hosting', text: 'Run Doory on your own server, with Docker or without it.' },
+  { icon: Server, title: 'Self-hosting', text: 'Run V-Ideas on your own server, with Docker or without it.' },
 ]
 
 const STEPS = [
   { title: 'Start without an account', text: 'Pick a size or a template. Your design saves in this browser as you go.' },
   { title: 'Design', text: 'Add text, photos, shapes and your brand colours. Images you upload stay on your device until you sign up.' },
-  { title: 'Save it to an account', text: 'Create a free account and Doory moves the design and its images to it in one step.' },
+  { title: 'Save it to an account', text: 'Create a free account and V-Ideas moves the design and its images to it in one step.' },
 ]
 
 export default function FeaturesPage() {
   usePageMeta({
     title: 'Features',
-    description: 'Everything Doory can do: a full design editor, templates, brand kits, sharing and comments, and exports without watermarks. Free and open source.',
+    description: 'Everything V-Ideas can do: a full design editor, templates, brand kits, sharing and comments, and exports without watermarks. Free and open source.',
     canonical: '/features',
   })
   return (

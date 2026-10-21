@@ -22,7 +22,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
     return (
       <div className={styles.page} role="alert">
         <h1 className={styles.title}>Something went wrong</h1>
-        <p className={styles.text}>Doory hit an unexpected problem. Reloading usually fixes it, and anything you saved is safe.</p>
+        <p className={styles.text}>V-Ideas hit an unexpected problem. Reloading usually fixes it, and anything you saved is safe.</p>
         <button type="button" className={styles.button} onClick={() => window.location.reload()}>
           Reload page
         </button>

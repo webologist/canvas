@@ -11,8 +11,8 @@ export interface LogoProps {
   title?: string
 }
 
-/** The Doory mark: the bunny sticker, plus the italic wordmark. */
-export function Logo({ variant = 'full', height = 28, className, title = 'Doory' }: LogoProps) {
+/** The V-Ideas mark: the bunny sticker, plus the italic wordmark. */
+export function Logo({ variant = 'full', height = 28, className, title = 'V-Ideas' }: LogoProps) {
   return (
     <span
       className={cx(styles.logo, className)}
@@ -23,7 +23,7 @@ export function Logo({ variant = 'full', height = 28, className, title = 'Doory'
       <img className={styles.mark} src={bunnyMark} alt="" width={height} height={height} draggable={false} />
       {variant === 'full' ? (
         <span className={styles.word} aria-hidden="true">
-          Doory
+          V-Ideas
         </span>
       ) : null}
     </span>

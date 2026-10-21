@@ -32,7 +32,7 @@ export function DangerSection() {
 
   return (
     <>
-      <SettingsCard id="session" title="Session" description="Sign out of Doory on this device.">
+      <SettingsCard id="session" title="Session" description="Sign out of V-Ideas on this device.">
         <div>
           <Button variant="secondary" leftIcon={<LogOut size={16} />} loading={signingOut} onClick={() => void signOut()}>
             Sign out
@@ -46,7 +46,7 @@ export function DangerSection() {
           </Button>
         </div>
       </SettingsCard>
-      <Dialog open={open} onClose={() => setOpen(false)} title="Delete your account?" description="Everything you’ve made in Doory will be erased for good." size="sm">
+      <Dialog open={open} onClose={() => setOpen(false)} title="Delete your account?" description="Everything you’ve made in V-Ideas will be erased for good." size="sm">
         {open ? (
           <DeleteForm
             hasPassword={user.has_password}
@@ -55,7 +55,7 @@ export function DangerSection() {
             onDeleted={() => {
               navigate('/', { replace: true })
               clearSession()
-              toast({ title: 'Your account was deleted', description: 'Thanks for trying Doory.' })
+              toast({ title: 'Your account was deleted', description: 'Thanks for trying V-Ideas.' })
             }}
           />
         ) : null}

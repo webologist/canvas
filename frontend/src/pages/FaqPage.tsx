@@ -11,17 +11,17 @@ export interface FaqItem {
 
 const FAQ_ITEMS: FaqItem[] = [
   { question: 'Do I need an account to design?', answer: 'No. Press “Start designing” and you’re in the editor straight away. Your design is saved in this browser as you work. An account is only needed to keep designs in the cloud, share them, or use brand kits.' },
-  { question: 'Is Doory really free?', answer: 'Yes. There are no plans, no paywalls and no ads. Every feature you see is available to everyone.' },
-  { question: 'Where are my designs stored?', answer: 'Guest designs and the images you upload live in your browser’s own storage on this device. Signed-in designs are stored in your Doory account, so you can open them anywhere.' },
+  { question: 'Is V-Ideas really free?', answer: 'Yes. There are no plans, no paywalls and no ads. Every feature you see is available to everyone.' },
+  { question: 'Where are my designs stored?', answer: 'Guest designs and the images you upload live in your browser’s own storage on this device. Signed-in designs are stored in your V-Ideas account, so you can open them anywhere.' },
   { question: 'What happens to my guest design when I sign up?', answer: 'We upload the images it uses, create the design in your account, and only then remove the local copy. If anything goes wrong along the way, your original stays untouched and you can try again.' },
   { question: 'Can I download my designs?', answer: 'Yes. Export as PNG, JPG, SVG or PDF. Exporting happens in your browser, so it works for guests too.' },
-  { question: 'Can I run Doory myself?', answer: 'Yes. Doory is open source and self-hostable. The code and setup notes are on GitHub.' },
+  { question: 'Can I run V-Ideas myself?', answer: 'Yes. V-Ideas is open source and self-hostable. The code and setup notes are on GitHub.' },
 ]
 
 export default function FaqPage() {
   usePageMeta({
     title: 'FAQ',
-    description: 'Answers to common questions about Doory: accounts, pricing, where designs are stored, exporting and self-hosting.',
+    description: 'Answers to common questions about V-Ideas: accounts, pricing, where designs are stored, exporting and self-hosting.',
     canonical: '/faq',
   })
   return (

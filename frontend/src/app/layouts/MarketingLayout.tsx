@@ -1,4 +1,4 @@
-import { GitBranch, Menu as MenuIcon, X } from 'lucide-react'
+import { Menu as MenuIcon, X } from 'lucide-react'
 import { Suspense, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { PageLoader } from '@/app/PageLoader'
@@ -14,7 +14,6 @@ const NAV = [
   { to: '/templates', label: 'Templates' },
   { to: '/features', label: 'Features' },
   { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact' },
 ] as const
 
 function HeaderNav({ onNavigate, orientation }: { onNavigate?: () => void; orientation: 'row' | 'column' }) {
@@ -25,9 +24,6 @@ function HeaderNav({ onNavigate, orientation }: { onNavigate?: () => void; orien
           {item.label}
         </NavLink>
       ))}
-      <a href={REPO_URL} className={styles.navLink} target="_blank" rel="noopener noreferrer" onClick={onNavigate}>
-        <GitBranch size={16} aria-hidden="true" /> GitHub
-      </a>
     </nav>
   )
 }
@@ -44,7 +40,7 @@ export function MarketingHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <Link to="/" className={styles.logo} aria-label="Doory home">
+        <Link to="/" className={styles.logo} aria-label="V-Ideas home">
           <Logo height={30} />
         </Link>
         <div className={styles.desktopNav}>
@@ -130,26 +126,6 @@ export function MarketingFooter() {
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className={styles.footerHeading}>Open source</h2>
-            <ul>
-              <li>
-                <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-                  Source on GitHub
-                </a>
-              </li>
-              <li>
-                <a href={`${REPO_URL}/issues`} target="_blank" rel="noopener noreferrer">
-                  Report an issue
-                </a>
-              </li>
-              <li>
-                <a href={`${REPO_URL}#quick-start`} target="_blank" rel="noopener noreferrer">
-                  Self-host Doory
-                </a>
               </li>
             </ul>
           </div>

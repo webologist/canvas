@@ -31,7 +31,7 @@ describe('describeUploadFailure', () => {
   })
 
   it('shows the server message of a server error and a neutral one for anything else', () => {
-    expect(describeUploadFailure(api(500, 'server_error', 'Doory had a problem on its side.'), 'a.ttf').message).toBe('Doory had a problem on its side.')
+    expect(describeUploadFailure(api(500, 'server_error', 'V-Ideas had a problem on its side.'), 'a.ttf').message).toBe('V-Ideas had a problem on its side.')
     expect(describeUploadFailure(api(418, 'teapot', 'secret detail'), 'a.ttf').message).toBe(t.userFonts.errors.unknown)
     expect(describeUploadFailure(new Error('boom'), 'a.ttf')).toEqual({ kind: 'unknown', message: t.userFonts.errors.unknown })
   })

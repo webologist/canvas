@@ -53,7 +53,7 @@ describe('what a failed download tells the user', () => {
 
   it('a lost session and a lost connection', () => {
     expect(describeExportFailure(api(401, 'not_authenticated'))).toMatchObject({ kind: 'signed-out', retryable: false })
-    expect(describeExportFailure(api(0, 'network_error', 'We could not reach Doory.'))).toMatchObject({ kind: 'offline', retryable: true })
+    expect(describeExportFailure(api(0, 'network_error', 'We could not reach V-Ideas.'))).toMatchObject({ kind: 'offline', retryable: true })
   })
 
   it('a rejected request shows the server field message', () => {

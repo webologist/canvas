@@ -1,5 +1,5 @@
 /**
- * Doory's extra properties on Fabric objects, plus small typed accessors. We deliberately do not
+ * V-Ideas's extra properties on Fabric objects, plus small typed accessors. We deliberately do not
  * augment Fabric's own types: `DoryObject` is an intersection used wherever custom props are read.
  */
 import type { FabricObject } from 'fabric'
@@ -63,7 +63,7 @@ export interface DoryProps {
   innerRatio?: number
   arrowStart?: ArrowHead
   arrowEnd?: ArrowHead
-  /** Doory-level filter list (the document format's `filters`); Fabric's own filter objects derive from it. */
+  /** V-Ideas-level filter list (the document format's `filters`); Fabric's own filter objects derive from it. */
   filterSpecs?: ImageFilterSpec[]
   /** How the object comes in, moves and leaves in a presentation or a video (editor/animation). */
   animation?: ObjectAnimation

@@ -77,7 +77,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setStatus(me.value.user ? 'authenticated' : 'anonymous')
         setBootstrapError(null)
       } else {
-        setBootstrapError(isApiError(me.reason) ? me.reason : new ApiError({ status: 0, code: 'network_error', message: 'Could not reach Doory.' }))
+        setBootstrapError(isApiError(me.reason) ? me.reason : new ApiError({ status: 0, code: 'network_error', message: 'Could not reach V-Ideas.' }))
         userRef.current = null
         setUserState(null)
         setStatus('anonymous')

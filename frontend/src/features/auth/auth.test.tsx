@@ -35,7 +35,7 @@ describe('session bootstrap and route guard', () => {
     await waitFor(() => expect(router.state.location.pathname).toBe('/dashboard'))
   })
 
-  it('shows a retryable "can’t reach Doory" state when the session check fails on a protected page', async () => {
+  it('shows a retryable "can’t reach V-Ideas" state when the session check fails on a protected page', async () => {
     let calls = 0
     const { router } = renderApp('/dashboard', {
       handlers: [
@@ -45,7 +45,7 @@ describe('session bootstrap and route guard', () => {
         }),
       ],
     })
-    expect(await screen.findByText('We can’t reach Doory')).toBeInTheDocument()
+    expect(await screen.findByText('We can’t reach V-Ideas')).toBeInTheDocument()
     expect(router.state.location.pathname).toBe('/dashboard')
     await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
     expect(await screen.findByRole('heading', { name: /Ada/ })).toBeInTheDocument()

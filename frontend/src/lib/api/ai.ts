@@ -14,7 +14,7 @@ export const aiApi = {
     remove: (id: string) => http.delete<void>(`/ai/providers/${id}/`),
     /** Which models to offer, with their labels and order (replaces the list). */
     setModels: (id: string, models: AiProviderModel[]) => http.put<AiProvider>(`/ai/providers/${id}/models/`, { json: { models } }),
-    /** Doory-compatible servers: adds the models the server lists. */
+    /** V-Ideas-compatible servers: adds the models the server lists. */
     loadModels: (id: string) => http.post<AiProvider>(`/ai/providers/${id}/load-models/`),
     test: (id: string, input: { task?: string; model?: string } = {}) => http.post<AiProviderTestResult>(`/ai/providers/${id}/test/`, { json: input }),
   },

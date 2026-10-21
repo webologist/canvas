@@ -1,4 +1,4 @@
-/** Where AI assistants reach this Doory (the MCP server behind the same origin as the app). */
+/** Where AI assistants reach this V-Ideas (the MCP server behind the same origin as the app). */
 export function mcpUrl(): string {
   return `${window.location.origin}/mcp`
 }

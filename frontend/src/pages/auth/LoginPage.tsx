@@ -23,7 +23,7 @@ export default function LoginPage() {
       </div>
       <LoginForm onSuccess={() => navigate(next, { replace: true })} />
       <p className={styles.footer}>
-        New to Doory? <Link to={`/signup${nextQuery}`}>Create a free account</Link>
+        New to V-Ideas? <Link to={`/signup${nextQuery}`}>Create a free account</Link>
       </p>
     </>
   )

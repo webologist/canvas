@@ -48,7 +48,7 @@ function LiveRegion() {
 }
 
 /**
- * The Doory editor. Mount it with a document, meta and an `EditorAdapter`; everything else (canvas, tools,
+ * The V-Ideas editor. Mount it with a document, meta and an `EditorAdapter`; everything else (canvas, tools,
  * panels, history, export, autosave triggering) lives inside.
  */
 export const EditorApp = forwardRef<EditorHandle, EditorAppProps>(function EditorApp(props, ref) {

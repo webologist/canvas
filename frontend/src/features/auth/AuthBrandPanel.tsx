@@ -4,7 +4,7 @@ import styles from './AuthBrandPanel.module.css'
 /** Decorative brand side of the auth screens: the bunny with a taped-down card. Hidden below 960px. */
 export function AuthBrandPanel() {
   return (
-    <aside className={styles.panel} aria-label="About Doory">
+    <aside className={styles.panel} aria-label="About V-Ideas">
       <div className={styles.scene} aria-hidden="true">
         <div className={styles.card}>
           <span className={styles.cardHand}>a little note</span>

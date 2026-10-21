@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 export interface PageMeta {
-  /** "<title> · Doory". */
+  /** "<title> · V-Ideas". */
   title?: string | null
   description?: string
   /** An absolute URL, or a path that is resolved against this site's origin. */
@@ -44,8 +44,8 @@ export function usePageMeta({ title, description, canonical, image, noindex }: P
   useEffect(() => {
     const undo: Array<() => void> = []
     const previousTitle = document.title
-    if (title) document.title = `${title} · Doory`
-    const shownTitle = title ? `${title} · Doory` : null
+    if (title) document.title = `${title} · V-Ideas`
+    const shownTitle = title ? `${title} · V-Ideas` : null
     if (description) {
       undo.push(setTag({ tag: 'meta', attr: 'name', key: 'description' }, description))
       undo.push(setTag({ tag: 'meta', attr: 'property', key: 'og:description' }, description))
