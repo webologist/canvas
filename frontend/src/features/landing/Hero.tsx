@@ -11,7 +11,7 @@ import { Doodles } from './Doodles'
 import { HeroCards } from './HeroCards'
 import styles from './Hero.module.css'
 
-const PERKS = ['No watermark', 'No ads', 'Open source']
+const PERKS = ['No watermark', 'No ads']
 
 export function Hero() {
   const [customOpen, setCustomOpen] = useState(false)

@@ -122,9 +122,6 @@ export function MarketingFooter() {
               <li>
                 <Link to="/faq">FAQ</Link>
               </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
             </ul>
           </div>
         </nav>

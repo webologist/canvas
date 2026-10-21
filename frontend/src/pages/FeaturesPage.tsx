@@ -1,4 +1,4 @@
-import { Download, GitBranch, LayoutTemplate, Palette, PenLine, PenTool, Server, Share2, ShieldCheck } from 'lucide-react'
+import { Download, LayoutTemplate, Palette, PenLine, PenTool, Share2, ShieldCheck } from 'lucide-react'
 import { Accent, PageIntro } from '@/features/marketing/PageIntro'
 import { usePageMeta } from '@/lib/usePageMeta'
 import { LinkButton } from '@/ui'
@@ -11,8 +11,7 @@ const FEATURES = [
   { icon: Share2, title: 'Sharing and comments', text: 'Share a view, comment or edit link, with a password if you want one.' },
   { icon: Download, title: 'Export', text: 'PNG, JPG, SVG and PDF, made in your browser. No watermark.' },
   { icon: ShieldCheck, title: 'No account needed', text: 'Designs you make without an account stay in your browser until you sign up.' },
-  { icon: GitBranch, title: 'Open source', text: 'The code is on GitHub. Report bugs or send fixes there.' },
-  { icon: Server, title: 'Self-hosting', text: 'Run V-Ideas on your own server, with Docker or without it.' },
+  { icon: title: 'Open source', text: 'The code is on GitHub. Report bugs or send fixes there.' },
 ]
 
 const STEPS = [
@@ -24,7 +23,7 @@ const STEPS = [
 export default function FeaturesPage() {
   usePageMeta({
     title: 'Features',
-    description: 'Everything V-Ideas can do: a full design editor, templates, brand kits, sharing and comments, and exports without watermarks. Free and open source.',
+    description: 'Everything V-Ideas can do: a full design editor, templates, brand kits, sharing and comments, and exports without watermarks.',
     canonical: '/features',
   })
   return (

@@ -11,7 +11,6 @@ const LandingPage = lazy(() => import('@/pages/LandingPage'))
 const TemplatesPage = lazy(() => import('@/pages/TemplatesPage'))
 const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'))
 const FaqPage = lazy(() => import('@/pages/FaqPage'))
-const ContactPage = lazy(() => import('@/pages/ContactPage'))
 const TemplateDetailPage = lazy(() => import('@/pages/TemplateDetailPage'))
 const LoginPage = lazy(() => import('@/pages/auth/LoginPage'))
 const SignupPage = lazy(() => import('@/pages/auth/SignupPage'))
@@ -47,7 +46,6 @@ export const routes: RouteObject[] = [
           { path: 'templates/:slug', element: <TemplateDetailPage /> },
           { path: 'features', element: <FeaturesPage /> },
           { path: 'faq', element: <FaqPage /> },
-          { path: 'contact', element: <ContactPage /> },
           { path: '*', element: <NotFoundPage /> },
         ],
       },

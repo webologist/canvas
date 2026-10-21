@@ -1,4 +1,4 @@
-"""`/sitemap.xml`: the landing page, the features, FAQ and contact pages, the template gallery and every
+"""`/sitemap.xml`: the landing page, the features and FAQ pages, the template gallery and every
 published template, for search engines.
 
 The addresses are built from `SITE_URL`, so the file is right for whatever domain the site runs on. It is
@@ -16,7 +16,7 @@ from django.views.decorators.http import require_GET
 from .models import Template
 
 MAX_URLS = 50_000  # the sitemap protocol's limit for one file
-STATIC_PAGES = ("/", "/features", "/faq", "/contact", "/templates")
+STATIC_PAGES = ("/", "/features", "/faq", "/templates")
 
 
 @require_GET

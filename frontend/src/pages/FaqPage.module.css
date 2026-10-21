@@ -68,15 +68,6 @@
   font-weight: 600;
 }
 
-.more {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  gap: var(--space-3);
-  margin-top: var(--space-12);
-}
-
 .hand {
   color: var(--color-text-muted);
   font-family: var(--font-hand);
@@ -84,15 +75,3 @@
   font-weight: 700;
 }
 
-.moreLink {
-  color: var(--ink);
-  font-weight: 800;
-  text-decoration: underline;
-  text-decoration-color: var(--pastel-blush);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 5px;
-}
-
-.moreLink:hover {
-  text-decoration-color: var(--ink);
-}

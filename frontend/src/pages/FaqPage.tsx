@@ -1,5 +1,4 @@
 import { useId, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Accent, PageIntro } from '@/features/marketing/PageIntro'
 import { usePageMeta } from '@/lib/usePageMeta'
 import styles from './FaqPage.module.css'
@@ -15,7 +14,6 @@ const FAQ_ITEMS: FaqItem[] = [
   { question: 'Where are my designs stored?', answer: 'Guest designs and the images you upload live in your browser’s own storage on this device. Signed-in designs are stored in your V-Ideas account, so you can open them anywhere.' },
   { question: 'What happens to my guest design when I sign up?', answer: 'We upload the images it uses, create the design in your account, and only then remove the local copy. If anything goes wrong along the way, your original stays untouched and you can try again.' },
   { question: 'Can I download my designs?', answer: 'Yes. Export as PNG, JPG, SVG or PDF. Exporting happens in your browser, so it works for guests too.' },
-  { question: 'Can I run V-Ideas myself?', answer: 'Yes. V-Ideas is open source and self-hostable. The code and setup notes are on GitHub.' },
 ]
 
 export default function FaqPage() {
@@ -37,12 +35,6 @@ export default function FaqPage() {
         bubble="ask away!"
       />
       <FaqList items={FAQ_ITEMS} />
-      <p className={styles.more}>
-        <span className={styles.hand}>still curious?</span>{' '}
-        <Link to="/contact" className={styles.moreLink}>
-          Get in touch
-        </Link>
-      </p>
     </div>
   )
 }

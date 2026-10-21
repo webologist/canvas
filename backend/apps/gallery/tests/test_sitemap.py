@@ -24,7 +24,6 @@ class TestSitemap:
             "https://doory.example.org/",
             "https://doory.example.org/features",
             "https://doory.example.org/faq",
-            "https://doory.example.org/contact",
             "https://doory.example.org/templates",
             "https://doory.example.org/templates/summer-sale",
             "https://doory.example.org/templates/wedding-invite",
@@ -38,7 +37,6 @@ class TestSitemap:
             "http://localhost:5173/",
             "http://localhost:5173/features",
             "http://localhost:5173/faq",
-            "http://localhost:5173/contact",
             "http://localhost:5173/templates",
         ]
 

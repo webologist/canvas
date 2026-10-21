@@ -129,12 +129,12 @@ describe('landing page', () => {
   })
 })
 
-describe('features, FAQ and contact pages', () => {
+describe('features and FAQ pages', () => {
   it('are linked from the header and the footer, and say what they are', async () => {
     const first = renderApp('/')
     const nav = await screen.findByRole('navigation', { name: 'Main' })
     const footer = screen.getByRole('navigation', { name: 'Footer' })
-    for (const [name, href] of [['Features', '/features'], ['FAQ', '/faq'], ['Contact', '/contact']]) {
+    for (const [name, href] of [['Features', '/features'], ['FAQ', '/faq']]) {
       expect(within(nav).getByRole('link', { name })).toHaveAttribute('href', href)
       expect(within(footer).getByRole('link', { name })).toHaveAttribute('href', href)
     }
@@ -150,9 +150,6 @@ describe('features, FAQ and contact pages', () => {
     const faq = renderApp('/faq')
     expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('Frequently asked questions')
     faq.unmount()
-
-    renderApp('/contact')
-    expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('We’d love to hear from you.')
   })
 
   it('the FAQ is an accessible accordion with one answer open at a time', async () => {
@@ -165,35 +162,6 @@ describe('features, FAQ and contact pages', () => {
     expect(second).toHaveAttribute('aria-expanded', 'true')
     expect(first).toHaveAttribute('aria-expanded', 'false')
     expect(screen.getByRole('region', { name: 'Is V-Ideas really free?' })).toBeVisible()
-    expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute('href', '/contact')
-  })
-
-  it('contact links go to GitHub safely, security reports stay private, and the note becomes a prefilled issue', async () => {
-    const opened: string[] = []
-    const open = vi.spyOn(window, 'open').mockImplementation((url) => {
-      opened.push(String(url))
-      return null
-    })
-    renderApp('/contact')
-    const bug = await screen.findByRole('link', { name: 'Report a bug' })
-    expect(bug.getAttribute('href')).toMatch(/^https:\/\/github\.com\/shaongitbd\/doory\/issues\/new\?title=Bug/)
-    expect(bug).toHaveAttribute('rel', expect.stringContaining('noopener'))
-    expect(screen.getByRole('link', { name: 'Report privately' })).toHaveAttribute('href', 'https://github.com/shaongitbd/doory/security/advisories/new')
-
-    await userEvent.click(screen.getByRole('button', { name: 'Continue on GitHub' }))
-    expect(await screen.findByText('Give your note a short subject.')).toBeInTheDocument()
-    expect(opened).toEqual([])
-
-    await userEvent.selectOptions(screen.getByLabelText('What’s it about?'), 'idea')
-    await userEvent.type(screen.getByLabelText(/^Subject/), 'Polka dot backgrounds')
-    await userEvent.type(screen.getByLabelText('Your note'), 'Please & thank you')
-    await userEvent.click(screen.getByRole('button', { name: 'Continue on GitHub' }))
-    expect(opened).toHaveLength(1)
-    const url = new URL(opened[0])
-    expect(url.pathname).toBe('/shaongitbd/doory/issues/new')
-    expect(url.searchParams.get('title')).toBe('Idea: Polka dot backgrounds')
-    expect(url.searchParams.get('body')).toBe('Please & thank you')
-    open.mockRestore()
   })
 })
 
