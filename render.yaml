@@ -1,5 +1,7 @@
 # Render blueprint: the Django API and its Postgres database. The frontend stays on Vercel, which proxies
 # /api, /media, /admin and /static to this service (see frontend/vercel.json).
+# Free plans: no disk, so media (fonts, template images) is re-created on every start, and the free
+# database expires after 30 days. For anything lasting use paid plans plus a disk or S3 (USE_S3).
 # Create it in Render: New > Blueprint > pick this repo. Change SITE_URL below if your Vercel address differs.
 services:
   - type: web
@@ -7,7 +9,7 @@ services:
     runtime: docker
     dockerContext: ./backend
     dockerfilePath: ./backend/Dockerfile
-    plan: starter
+    plan: free
     healthCheckPath: /api/v1/health/
     envVars:
       - key: PORT
@@ -24,18 +26,16 @@ services:
         value: https://canvas-rho-bice.vercel.app
       - key: DJANGO_ALLOWED_HOSTS
         value: .onrender.com,canvas-rho-bice.vercel.app
+      - key: WEB_CONCURRENCY
+        value: "1"
       - key: SERVE_MEDIA
         value: "true"
       - key: DOORY_SYNC_FONTS
         value: "true"
       - key: DOORY_SEED_TEMPLATES
         value: "true"
-    disk:
-      name: canvas-media
-      mountPath: /app/media
-      sizeGB: 2
 
 databases:
   - name: canvas-db
-    plan: basic-256mb
+    plan: free
     databaseName: doory
